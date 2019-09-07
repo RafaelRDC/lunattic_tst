@@ -34,7 +34,7 @@ function buy(){
 var produtos = [
 	{
 		id:1,
-		img:'./oi1.png',
+		img:'img/product/l-product-1.png',
 		nome:'oi1',
 		preco:3,
 		cart:false,
@@ -43,7 +43,7 @@ var produtos = [
 	},
 	{
 		id:2,
-		img:'./oi2.png',
+		img:'img/product/l-product-2.png',
 		nome:'oi2',
 		preco:4,
 		cart:false,
