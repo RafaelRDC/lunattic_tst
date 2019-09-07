@@ -20,6 +20,10 @@
         <link href="vendors/bootstrap-selector/css/bootstrap-select.min.css" rel="stylesheet"> 
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
+        <!--==================================Carrinho============================================-->
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestone.js"></script>
+        <link href="css/style2.css" rel="stylesheet">
     </head>
     <body>
         
@@ -328,6 +332,24 @@ Copyright &copy; All rights reserved |<a href="https://colorlib.com" target="_bl
         <script src="vendors/vertical-slider/js/jQuery.verticalCarousel.js"></script>
         <script src="vendors/jquery-ui/jquery-ui.js"></script>
         <script src="js/theme.js"></script>
+        <!--===============================Carrinho==============================================-->
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyBmfC4Oc7QKKy-w0HVTylCjzuBkcfww1RA",
+            authDomain: "lunattic-acd25.firebaseapp.com",
+            databaseURL: "https://lunattic-acd25.firebaseio.com",
+            projectId: "lunattic-acd25",
+            storageBucket: "lunattic-acd25.appspot.com",
+            messagingSenderId: "754179235652",
+            appId: "1:754179235652:web:412b413d897d7bc0074111"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          const db = firebase-firestone();
+          db.settings({ timestampsInSnapshots: true});
+        </script>
+        <script src="js/app.js"></script>
 
     </body>
 </html>
