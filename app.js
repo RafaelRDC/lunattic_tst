@@ -78,7 +78,7 @@ function clean() {
   (() =>{
   	for (let i = 0; i < produtos.length; i++) {
   		document.getElementById('row1').innerHTML+=`
-  			<h5>${produtos[i].nome}</h5>
+  			<h4>${produtos[i].nome}</h4>
   		`;
   	}
   })();
