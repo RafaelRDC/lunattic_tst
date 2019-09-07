@@ -77,13 +77,14 @@ function clean() {
   //RENDER
   (() =>{
   	for (let i = 0; i < produtos.length; i++) {
-  		document.getElementById('row1').innerHTML+='
+  		document.getElementById('row1').innerHTML+=`
   			<div class="card m-2" style="width:10rem;">
   			<img src="${produtos[i].img}" class="card-img-top>
   			<div class="card-body">
   			<h5 class= "card-title">${produtos[i].nome}</h5>
   			</div>
   			</div>
-  		';
+
+  		`;
   	}
   })();
