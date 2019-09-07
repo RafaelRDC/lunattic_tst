@@ -18,7 +18,7 @@ function buy(){
 				nome: produtos[i].nome,
 				preco: produtos[i].preco,
 				qnt: produtos[i].qnt,
-				total: produtos[i].total
+				total: produtos[i].total,
 			}
 			produtosF.push(produto)
 		}
@@ -52,7 +52,38 @@ var produtos = [
 	},
 ];
 
+function total(){
+	let total = 0;
+	for (let i = 0; i < produtos.length; i++) {
+		if (produtos[i].cart){
+			total+= produtos[i].total;
+		}
+	}
+	return total
+}
+
+var con = 0;
+var con2 = []; //position at table
+
+function clean() {
+	for (let i = 0; i < produtos.length; i++) {
+		produtos[i].cart=false;
+		produtos[i].qnt=1,
+		produtos[i].total=0,
+		con2=[];
+		updateCart();
+	}
+}
   //RENDER
   (() =>{
-
+  	for (let i = 0; i < produtos.length; i++) {
+  		document.getElementById('row1').innerHTML+='
+  			<div class="card m-2" style="width:10rem;">
+  			<img src="${produtos[i].img}" class="card-img-top>
+  			<div class="card-body">
+  			<h5 class= "card-title">${produtos[i].nome}</h5>
+  			</div>
+  			</div>
+  		';
+  	}
   })();
