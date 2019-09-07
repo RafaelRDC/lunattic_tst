@@ -9,4 +9,4 @@
     appId: "1:754179235652:web:412b413d897d7bc0074111"
   };
   firebase.initializeApp(firebaseConfig);
-  const db = firebase-firestone();
+
