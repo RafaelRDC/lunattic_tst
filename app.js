@@ -1,14 +1,102 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyBmfC4Oc7QKKy-w0HVTylCjzuBkcfww1RA",
-    authDomain: "lunattic-acd25.firebaseapp.com",
-    databaseURL: "https://lunattic-acd25.firebaseio.com",
-    projectId: "lunattic-acd25",
-    storageBucket: "lunattic-acd25.appspot.com",
-    messagingSenderId: "754179235652",
-    appId: "1:754179235652:web:412b413d897d7bc0074111"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+function setup(){
+	var firebaseConfig = {
+	    apiKey: "AIzaSyBmfC4Oc7QKKy-w0HVTylCjzuBkcfww1RA",
+	    authDomain: "lunattic-acd25.firebaseapp.com",
+	    databaseURL: "https://lunattic-acd25.firebaseio.com",
+	    projectId: "lunattic-acd25",
+	    storageBucket: "lunattic-acd25.appspot.com",
+	    messagingSenderId: "754179235652",
+	    appId: "1:754179235652:web:412b413d897d7bc0074111"
+	  };
+	  firebase.initializeApp(firebaseConfig);
+	  db = firebase.database();
+
+	  var ref = db.ref('produtos').child('tiedie').child('camisas');
+	  ref.on('value', gotData, errData);
+}
+
+function gotData(data)
+{
+	var produtos = data.val();
+	var keys = Object.keys(produtos);
+	console.log(keys);
+	for (var i = 0; i < keys.length; i++)
+	{
+		var produto = keys[i];
+		var id = produtos[produto]['id'];
+		var nome = produtos[produto]['nome'];
+		var quantidade = produtos[produto]['quantidade'];
+		var preco = produtos[produto]['preco'];
+
+		(() =>{
+			document.getElementById('row1').innerHTML+=`
+			<h4>${produtos['Camisa 1']}</h4>`;
+  		})();
+
+
+		//var li = createElement('li', initials + ": " + score);
+		//li.parent('row1');
+	}
+}
+
+function errData(err){
+	console.log('Error!!');
+	console.log(err);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------
+const cafeList = document.querySelector('#cafe-list');
+
+function renderCafe(doc){
+	let li = document.createElement('li');
+	let nome = document.createElement('span');
+	let preco = document.createElement('span');
+
+	li.setAttribute('data-id', doc.id);
+	nome.textContent = doc.data().nome;
+	preco.textContent =  doc.data().preco;
+
+	li.appendChild(nome);
+	li.appendChild(preco);
+
+	cafeList.appendChild(li); 
+}
+
+db.collection('produtos').get().then((snapshot) =>{
+	snapshot.docs.forEach(doc => {
+		renderCafe(doc);
+	})
+}) 
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------------------   
 
 function buy(){
 	var produtosF =[];
@@ -74,11 +162,13 @@ function clean() {
 		updateCart();
 	}
 }
-  //RENDER
+*/
+
+ /* //RENDER
   (() =>{
-  	for (let i = 0; i < produtos.length; i++) {
-  		document.getElementById('row1').innerHTML+=`
-  			<h4>${produtos[i].nome}</h4>
-  		`;
-  	}
+  	setup();
+	document.getElementById('row1').innerHTML+=`
+		<h4>${produto[0]}</h4>
+	`;
   })();
+ */
