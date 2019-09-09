@@ -20,7 +20,21 @@ function gotData(data)
 	var produtos = data.val();
 	var keys = Object.keys(produtos);
 	console.log(keys);
-	for (var i = 0; i < keys.length; i++)
+
+	var produto = keys[0];
+	var id = produtos[produto]['id'];
+	var nome = produtos[produto]['nome'];
+	var quantidade = produtos[produto]['quantidade'];
+	var preco = produtos[produto]['preco'];
+
+	(() =>{
+		document.getElementById('row1').innerHTML+=`
+		<h4>${nome}</h4>`;
+		})();
+
+	
+
+	/*for (var i = 0; i < keys.length; i++)
 	{
 		var produto = keys[i];
 		var id = produtos[produto]['id'];
@@ -30,13 +44,13 @@ function gotData(data)
 
 		(() =>{
 			document.getElementById('row1').innerHTML+=`
-			<h4>${produtos['Camisa 1']}</h4>`;
+			<h4>${nome}</h4>`;
   		})();
 
 
 		//var li = createElement('li', initials + ": " + score);
 		//li.parent('row1');
-	}
+	}*/
 }
 
 function errData(err){
